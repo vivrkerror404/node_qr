@@ -18,13 +18,24 @@
 <body>
 	<form onsubmit="generate();return false;" class="col-md-6">
 		<input type="text" name="name" id="qr" class="form-control">
-		<input type="submit" class="btn btn-primary mt-5">
+		<input type="submit" class="btn btn-primary mt-5" id="mybtn">
 	</form>
 <div id="qrcode"></div>
 <script type="text/javascript">
 	count=0;
+	count1=0;
 window.addEventListener('keyup',getkey);
+document.getElementById('mybtn').addEventListener('click',getbtn);
+function getbtn()
+{
+	count1+=1
+	if(count1>1)
+	{
+		document.location.reload();
 
+	}
+
+}
 function getkey(e)
 {
 
@@ -41,7 +52,7 @@ function getkey(e)
 	
 }
 	function generate(){
-	document.location.reload();
+	
 
 var mytext=document.getElementById('qr').value;
 console.log(mytext);
@@ -51,7 +62,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 	height: 128,
 	colorDark : "#000000",
 	colorLight : "#ffffff",
-	correctLevel : QRCode.CorrectLevel.H
+
 });
 
 }
