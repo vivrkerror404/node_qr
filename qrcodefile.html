@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="qrcode.min.js"></script>
+</head>
+<style type="text/css">
+	#qrcode
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 30px;
+	}
+</style>
+<body>
+	<form onsubmit="generate();return false;">
+		<input type="text" name="name" id="qr">
+	</form>
+<div id="qrcode"></div>
+<script type="text/javascript">
+	count=0;
+window.addEventListener('keyup',getkey);
+function getkey(e)
+{
+
+	if(e.code=="Enter")
+	{
+		count+=1;
+		if(count>1)
+		{
+			document.location.reload();
+		}
+
+	}
+
+	
+}
+	function generate(){
+	
+
+var mytext=document.getElementById('qr').value;
+console.log(mytext);
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text:`${mytext}`,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+
+}
+
+</script>
+
+</body>
+</html>
