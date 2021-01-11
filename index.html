@@ -19,17 +19,18 @@
 	}
 </style>
 <body>
-	<form onsubmit="generate();return false;" class="col-md-6">
+<!-- 	<form onsubmit="generate();return false;" class="col-md-6">
 		<input type="text" name="name" id="qr" class="form-control">
 		<input type="submit" class="btn btn-primary mt-5" id="mybtn" value="generate QRCode">
-	</form>
+	</form> -->
 <div id="qrcode"></div>
 
 <script type="text/javascript">
+
 	count=0;
 	count1=0;
 window.addEventListener('keyup',getkey);
-document.getElementById('mybtn').addEventListener('click',getbtn);
+// document.getElementById('mybtn').addEventListener('click',getbtn);
 function getbtn()
 {
 	count1+=1
@@ -55,11 +56,16 @@ function getkey(e)
 
 	
 }
+window.addEventListener('load',generate);
+
 	function generate(){
 	
 
-var mytext=document.getElementById('qr').value;
-console.log(mytext);
+// var mytext=document.getElementById('qr').value;
+// console.log(mytext);
+
+alert("QR code value":- window.location)
+mytext=window.location
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text:`${mytext}`,
 	width: 128,
@@ -76,10 +82,10 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 <br>
 <br>
 <br>
-<h1>QRCODE READER</h1>
+<!-- <h1>QRCODE READER</h1>
 <small class="text-center text-success">upload a qrcode image</small><br>
 <input type="file" name="file" id="file">
 <p>Qr Content is :<b class="text-primary"><span id="content"></span></b></p>
-	  <script type="text/javascript" src="qrReader.js"></script>
+	  <script type="text/javascript" src="qrReader.js"></script> -->
 </body>
 </html>
