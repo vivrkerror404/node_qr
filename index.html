@@ -64,7 +64,7 @@ window.addEventListener('load',generate);
 // var mytext=document.getElementById('qr').value;
 // console.log(mytext);
 
-alert("QR code value", window.location)
+console.log("QR code value", window.location)
 mytext=window.location
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text:`${mytext}`,
